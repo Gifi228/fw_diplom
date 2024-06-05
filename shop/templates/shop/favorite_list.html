@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block main %}
+
+
+<div class="container mt-3 mb-3 align-items-center">
+    <ul class="me-auto mb-2 mb-lg-0">
+        {% for favorite in favorites %}
+        <li>{{ favorite.articles.title }} - User: {{ favorite.user.first_name }}
+        <a href="{% url 'remove_from_favorites' favorite.articles.id %}">Remove</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+</div>
+
+
+
+{% endblock main %}

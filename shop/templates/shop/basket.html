@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+
+{% block main %}
+<div class="container mt-4 mb-4 text-center" >
+
+    <h1>My Basket</h1>
+    <ul class="me-auto mb-2 mb-lg-0">
+        {% for basket in baskets %}
+            <li>{{ basket.article.title }} - Quantity: {{ basket.quantity }} - Price: {{ basket.article.price }}
+                <a href="{% url 'remove_from_basket' basket.id %}">Remove</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Continue Shopping</a>
+
+</div>
+
+{% endblock main %}

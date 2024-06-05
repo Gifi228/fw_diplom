@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block carousel %}
+
+{% endblock carousel %}
+
+{% block main %}
+
+<div class="container mb-3 mt-3 d-flex justify-content-center">
+    <div class="col-6">
+        <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary">
+            Add Article
+        </button>
+    </form>
+    </div>
+</div>
+
+
+{% endblock main %}
